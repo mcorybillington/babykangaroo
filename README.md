@@ -1,11 +1,10 @@
-# baby kangaroo
+# babykangaroo
 
-If you aren't good with big words, just run this script against your document, collect oneself, and
-let this script do the drudgery.
+If you aren't good with big words, just run this script against your document, sit back, and let this script do the hard work.
 
-baby-kangaroo-ified:
+babykangaroo-ified:
 
-If you aren't respectable with self-aggrandizing words, precisely outpouring this handwriting against your document, accumulate oneself, and countenance this handwriting practice the drudgery.
+>If you aren't respectable with self-aggrandizing words, precisely outpouring this handwriting against your document, baby-sit back, and countenance this handwriting practice the intemperately work.
 ## Getting Started
 
 Clone this repo
