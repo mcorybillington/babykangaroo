@@ -3,6 +3,7 @@ import docx
 import argparse
 from enchant import Dict
 from nltk.corpus import wordnet
+from nltk.data import load
 
 
 def options():
@@ -28,6 +29,9 @@ def babykangarooify(path):
                 new_paragraph.append(new_word)
             else:
                 new_paragraph.append(word)
+        sent_tokenizer = load('tokenizers/punkt/english.pickle')
+        sentences = sent_tokenizer.tokenize(' '.join(new_paragraph))
+        new_paragraph = [sent.capitalize() for sent in sentences]
         new_doc.add_paragraph(' '.join(new_paragraph))
 
     head, tail = ntpath.split(path)
