@@ -12,7 +12,15 @@ def options():
     return parser.parse_args()
 
 
+def capitalize_sentences(sentences):
+    sent_tokenizer = load('tokenizers/punkt/english.pickle')
+    new_sentences = sent_tokenizer.tokenize(' '.join(sentences))
+    new_sentences = [sent.capitalize() for sent in new_sentences]
+    return ' '.join(new_sentences)
+
+
 def babykangarooify(path):
+    head, tail = ntpath.split(path)
     d = Dict("en_US")
     doc = docx.Document(path)
     new_doc = docx.Document()
@@ -29,12 +37,8 @@ def babykangarooify(path):
                 new_paragraph.append(new_word)
             else:
                 new_paragraph.append(word)
-        sent_tokenizer = load('tokenizers/punkt/english.pickle')
-        sentences = sent_tokenizer.tokenize(' '.join(new_paragraph))
-        new_paragraph = [sent.capitalize() for sent in sentences]
-        new_doc.add_paragraph(' '.join(new_paragraph))
-
-    head, tail = ntpath.split(path)
+        new_cap_paragraph = capitalize_sentences(new_paragraph)
+        new_doc.add_paragraph(new_cap_paragraph)
     new_doc.save(head + '/bk_' + tail)
 
 
