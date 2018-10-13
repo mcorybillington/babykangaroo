@@ -48,7 +48,6 @@ def babykangarooify(path, arg):
                 new_word = max(possible, key=lambda s: (len(s), s)) if possible else word
                 new_paragraph.append(new_word)
             elif syns:
-                print('here')
                 new_word = max(syns, key=lambda s: (len(s), s))
                 new_paragraph.append(new_word)
             else:
