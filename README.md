@@ -26,16 +26,18 @@ from nltk.corpus import wordnet
 Output file is a .docx placed in the same directory as your original with 'bk_' prefacing the file name.
 
 ```
-usage: python3 babykangaroo.py [-h] docx_file
+usage: babykangaroo.py [-h] [-c] docx_file
 
 Sound smarter, immediately.
 
 positional arguments:
-  docx_file   Document to babykangaroo-ify
+  docx_file        Document to babykangaroo-ify
 
 optional arguments:
-  -h, --help  show this help message and exit
-
+  -h, --help       show this help message and exit
+  -c, --corporate  Corporate syntax
 ```
+
+Corporate syntax adds common corporate lingo/buzzwords to your docx file. It is still a bit shaky, but I'm trying to improve it.
 
 ### Happy Thesaurusing
